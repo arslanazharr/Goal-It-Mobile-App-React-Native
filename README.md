@@ -1,4 +1,4 @@
-<h2 align="center"><strong>GOAL IT </strong>Overview</h2>
+<h2 align="center">App's Overview</h2>
 <ul>
   <h4  align="left">Main Screen:</h4>
   <ul>
