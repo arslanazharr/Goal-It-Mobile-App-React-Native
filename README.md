@@ -1,4 +1,4 @@
-<h3>App Overview</h3>
+<h3 style="text-align: center">App Overview</h3>
 <ul>
   <li>Main Screen:</li>
   <ul>
