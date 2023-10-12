@@ -43,31 +43,31 @@ export default function App() {
 
   return (
     <ImageBackground
-      style={{ flex: 1 }}
+      style={styles.container}
       source={require("./assets/output.jpg")}
     >
-      <View style={styles.container}>
+      <View style={styles.button}>
         <Button title="Add New Goal" onPress={startAddGoalHandler} />
-        {showModal && (
-          <GoalInput addGoals={enterText} onCancel={endAddGoalHandler} />
-        )}
-        <View style={styles.textView}>
-          <FlatList
-            data={saveText}
-            renderItem={(itemData) => {
-              return (
-                <GoalOutput
-                  text={itemData.item.text}
-                  deleteItem={deleteItem}
-                  id={itemData.item.id}
-                />
-              );
-            }}
-            keyExtractor={(item, index) => {
-              return item.id;
-            }}
-          />
-        </View>
+      </View>
+      {showModal && (
+        <GoalInput addGoals={enterText} onCancel={endAddGoalHandler} />
+      )}
+      <View style={styles.textView}>
+        <FlatList
+          data={saveText}
+          renderItem={(itemData) => {
+            return (
+              <GoalOutput
+                text={itemData.item.text}
+                deleteItem={deleteItem}
+                id={itemData.item.id}
+              />
+            );
+          }}
+          keyExtractor={(item, index) => {
+            return item.id;
+          }}
+        />
       </View>
     </ImageBackground>
   );
@@ -84,5 +84,9 @@ const styles = StyleSheet.create({
     paddingLeft: 40,
     paddingRight: 40,
     paddingTop: 20,
+  },
+
+  button: {
+    marginTop: 40,
   },
 });

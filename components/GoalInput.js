@@ -39,6 +39,8 @@ const GoalInput = ({ addGoals, onCancel }) => {
             onChangeText={handleTextChange}
             style={styles.input}
             value={enteredText}
+            keyboardAppearance="dark"
+            placeholderTextColor="gray"
           />
           {errorMessage && (
             <Text style={styles.errorMessage}>Add a goal first</Text>
@@ -56,11 +58,12 @@ const GoalInput = ({ addGoals, onCancel }) => {
 const styles = StyleSheet.create({
   input: {
     height: 40,
-    padding: 20,
+    paddingLeft: 20,
     marginBottom: 20,
     borderColor: "black",
     borderWidth: 1,
     borderRadius: 20,
+    color: "black",
   },
   inputWrapper: {
     padding: 40,
