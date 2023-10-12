@@ -1,4 +1,4 @@
-<h3 style="text-align: center">App Overview</h3>
+<h3 style="text-align: center;">App Overview</h3>
 <ul>
   <li>Main Screen:</li>
   <ul>
@@ -19,6 +19,7 @@
     <li>Users can tap a goal to mark it as accomplished or delete it.</li>
   </ul>
 </ul>
+
 
 
 <div >
