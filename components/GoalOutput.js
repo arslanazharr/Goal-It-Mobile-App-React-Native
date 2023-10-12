@@ -15,7 +15,7 @@ const GoalOutput = ({ text, deleteItem, id }) => {
 
 const styles = StyleSheet.create({
   text: {
-    backgroundColor: "purple",
+    backgroundColor: "#2196F3",
     marginBottom: 10,
     paddingTop: 10,
     paddingBottom: 10,

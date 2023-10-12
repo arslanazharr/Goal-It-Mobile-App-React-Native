@@ -1,4 +1,12 @@
-import { View, StyleSheet, TextInput, Button, Modal, Text } from "react-native";
+import {
+  View,
+  StyleSheet,
+  TextInput,
+  Button,
+  Modal,
+  Text,
+  ImageBackground,
+} from "react-native";
 import { useState } from "react";
 
 const GoalInput = ({ addGoals, onCancel }) => {
@@ -21,21 +29,26 @@ const GoalInput = ({ addGoals, onCancel }) => {
 
   return (
     <Modal animationType="slide">
-      <View style={styles.inputWrapper}>
-        <TextInput
-          placeholder="Write anything..."
-          onChangeText={handleTextChange}
-          style={styles.input}
-          value={enteredText}
-        />
-        {errorMessage && (
-          <Text style={styles.errorMessage}>Add a goal first</Text>
-        )}
-        <View style={styles.buttonsWrapper}>
-          <Button title="Add Goals" onPress={addGoalHandler} />
-          <Button title="Cancel" onPress={onCancel} />
+      <ImageBackground
+        style={{ flex: 1 }}
+        source={require("../assets/input.jpg")}
+      >
+        <View style={styles.inputWrapper}>
+          <TextInput
+            placeholder="Write anything..."
+            onChangeText={handleTextChange}
+            style={styles.input}
+            value={enteredText}
+          />
+          {errorMessage && (
+            <Text style={styles.errorMessage}>Add a goal first</Text>
+          )}
+          <View style={styles.buttonsWrapper}>
+            <Button title="Add Goals" onPress={addGoalHandler} />
+            <Button title="Cancel" onPress={onCancel} />
+          </View>
         </View>
-      </View>
+      </ImageBackground>
     </Modal>
   );
 };
@@ -52,7 +65,7 @@ const styles = StyleSheet.create({
   inputWrapper: {
     padding: 40,
     flex: 1,
-    backgroundColor: "#ADD8E6",
+    justifyContent: "center",
   },
   buttonsWrapper: {
     flexDirection: "row",

@@ -1,5 +1,11 @@
 import { useState, useEffect } from "react";
-import { StyleSheet, View, FlatList, Button } from "react-native";
+import {
+  StyleSheet,
+  View,
+  FlatList,
+  Button,
+  ImageBackground,
+} from "react-native";
 import GoalOutput from "./components/GoalOutput";
 import GoalInput from "./components/GoalInput";
 
@@ -36,35 +42,39 @@ export default function App() {
   }, [saveText]);
 
   return (
-    <View style={styles.container}>
-      <Button title="Add New Goal" onPress={startAddGoalHandler} />
-      {showModal && (
-        <GoalInput addGoals={enterText} onCancel={endAddGoalHandler} />
-      )}
-      <View style={styles.textView}>
-        <FlatList
-          data={saveText}
-          renderItem={(itemData) => {
-            return (
-              <GoalOutput
-                text={itemData.item.text}
-                deleteItem={deleteItem}
-                id={itemData.item.id}
-              />
-            );
-          }}
-          keyExtractor={(item, index) => {
-            return item.id;
-          }}
-        />
+    <ImageBackground
+      style={{ flex: 1 }}
+      source={require("./assets/output.jpg")}
+    >
+      <View style={styles.container}>
+        <Button title="Add New Goal" onPress={startAddGoalHandler} />
+        {showModal && (
+          <GoalInput addGoals={enterText} onCancel={endAddGoalHandler} />
+        )}
+        <View style={styles.textView}>
+          <FlatList
+            data={saveText}
+            renderItem={(itemData) => {
+              return (
+                <GoalOutput
+                  text={itemData.item.text}
+                  deleteItem={deleteItem}
+                  id={itemData.item.id}
+                />
+              );
+            }}
+            keyExtractor={(item, index) => {
+              return item.id;
+            }}
+          />
+        </View>
       </View>
-    </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fff",
     flexDirection: "column",
     flex: 1,
   },
